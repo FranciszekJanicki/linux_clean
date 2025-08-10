@@ -16,5 +16,4 @@ setup:
 all:
 	$(MAKE) lint
 	$(MAKE) build
-	$(MAKE) flash
-	$(MAKE) monitor
+	$(MAKE) run
