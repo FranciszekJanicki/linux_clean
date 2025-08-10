@@ -1,11 +1,11 @@
 FROM archlinux:base-devel
 
 RUN pacman -Syu --noconfirm \
-    build-essentials cmake make git \
+    cmake make git nano gdb valgrind \
     && pacman -Scc --noconfirm
 
-RUN pacman -Syu --noconfirm nano \
-    && pacman -Scc --noconfirm
+RUN useradd -m -s /bin/bash devuser \
+    && echo "devuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 USER devuser
 WORKDIR /home/devuser
